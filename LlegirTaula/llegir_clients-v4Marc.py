@@ -59,25 +59,28 @@ while sortir == False:
 	elif opcio == 1: 
 		
 		try:			
-				nombretabla = raw_input ("Introduzca el nombre de la tabla:")
+				"""nombretabla = raw_input ("Introduzca el nombre de la tabla:")
 				sql = "SELECT * FROM " + nombretabla
 				cur.execute(sql);
 				#cur.execute("SELECT * FROM pedidos");
 				rows = cur.fetchall()
 
 				if nombretabla == 'pedidos':
+"""
+				os.system('clear')
+				sql = "SELECT * FROM pedidos"
+				cur.execute(sql);
+				colnames = [desc[0]
+					for desc in cur.description
+					#print " num_pedido | fecha_pedido | clie | rep | fab | producto | cant | importe "
 
-					os.system('clear')
-					
-					print " num_pedido | fecha_pedido | clie | rep | fab | producto | cant | importe "
-
-					for row in rows:
+					for row in rows
 					   #print row[0],row[1],row[2],row[3]
 					   print(" {:^10} {} {:^10} {:^10} {:^10} {:^10} {:^10} {:^10} ".format(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
 					
 					tecla = raw_input('Prem una tecla per continuar')
 				
-				if nombretabla == 'clientes':
+				"""if nombretabla == 'clientes':
 
 					os.system('clear')
 					
@@ -87,7 +90,7 @@ while sortir == False:
 					   #print row[0],row[1],row[2],row[3]
 					   print(" {:^10} {:^10} {:^10} {:^10} ".format(row[0], row[1], row[2], row[3]))
 					
-					tecla = raw_input('Prem una tecla per continuar')
+					tecla = raw_input('Prem una tecla per continuar')"""
 		
 		except psycopg2.Error as er :
 			print "-------- ERROR:", er.pgcode, " -------- \n"
