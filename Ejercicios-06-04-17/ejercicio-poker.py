@@ -47,6 +47,6 @@ print "La banca tiene", carta1, classe1
 print "El jugador tiene", carta2, classe2
 
 if (num1>num2):
-	print "El jugador gana."
-else:
 	print "La banca gana."
+else:
+	print "El jugador gana."
