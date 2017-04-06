@@ -46,6 +46,10 @@ if (num2==13):
 print "La banca tiene", carta1, classe1
 print "El jugador tiene", carta2, classe2
 
+if (num1==num2):
+	print "Empate"
+else:
+
 if (num1>num2):
 	print "La banca gana."
 else:
