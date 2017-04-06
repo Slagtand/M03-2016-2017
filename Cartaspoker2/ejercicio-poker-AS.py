@@ -1,10 +1,6 @@
 # coding: utf8
 
 from random import randint 
-random1=randint(1,4)
-random2=randint(1,4)
-num1=randint(2,14)
-num2=randint(2,14)
 volta=0
 sortir=False
 while sortir==False:
