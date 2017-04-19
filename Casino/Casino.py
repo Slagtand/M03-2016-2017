@@ -4,9 +4,11 @@ from random import randint
 sortir=False
 sortir_apuesta=False
 saldo=100
+apuesta=0
 
 print "Tu saldo es:", saldo 
 
+saldo=saldo-apuesta
 apuesta=input("Introduzca su apuesta:\n")
 while sortir_apuesta==False:
 	if (apuesta==-1):
@@ -18,7 +20,7 @@ while sortir_apuesta==False:
 		else:
 			print "Su apuesta no es válida, debe de ser 10 mínimo y no superar su saldo"
 			apuesta=input("Introduzca su apuesta:\n")
-
+saldo=saldo-apuesta
 while sortir==False:
 	random1=randint(1,4)
 	random2=randint(1,4)
@@ -74,17 +76,19 @@ while sortir==False:
 	else:
 		print "El jugador gana."
 		saldo=saldo+(apuesta*2)
-
-	print "Tu saldo es:", saldo 
-
-	apuesta=input("Introduzca su apuesta:\n")
-	while sortir_apuesta==False:
-		if (apuesta==-1):
-			sortir_apuesta=True
-			sortir=True
-		else:
-			if (apuesta>=10 and apuesta<=saldo):
+	print "Tu saldo es:", saldo
+	if (saldo < 10):
+		sortir=True
+	else:
+		apuesta=input("Introduzca su apuesta:\n")
+		saldo=saldo-apuesta
+		while sortir_apuesta==False:
+			if (apuesta==-1):
 				sortir_apuesta=True
+				sortir=True
 			else:
-				print "Su apuesta no es válida, debe de ser 10 mínimo y no superar su saldo"
-				apuesta=input("Introduzca su apuesta:\n")
+				if (apuesta>=10 and apuesta<=saldo):
+					sortir_apuesta=True
+				else:
+					print "Su apuesta no es válida, debe de ser 10 mínimo y no superar su saldo"
+					apuesta=input("Introduzca su apuesta:\n")
