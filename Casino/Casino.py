@@ -82,6 +82,7 @@ while sortir==False:
 	else:
 		apuesta=input("Introduzca su apuesta:\n")
 		saldo=saldo-apuesta
+		sortir_apuesta=False
 		while sortir_apuesta==False:
 			if (apuesta==-1):
 				sortir_apuesta=True
