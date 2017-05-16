@@ -3,6 +3,14 @@
 #Fem un import del calendari
 import calendar
 
+#Definim el my_range
+#######################################################
+def my_range(inici, fi, increment):
+    while inici <= fi:
+        yield inici
+        inici = inici + increment
+#######################################################
+
 #Establim quin mes de quin any vol l'usuari i establim el contador
 mes = input ("Introduzca el mes (1-12):\n ") 
 any = input ("Introduzca el año (AAAA):\n ")
@@ -14,14 +22,6 @@ dia_semana = calendar.weekday(any, mes, 1)
 
 #Creem la variable de dies màxims que pot tindre cada mes
 dias_max = num_dias_mes
-
-#Definim el my_range
-#######################################################
-def my_range(inici, fi, increment):
-    while inici <= fi:
-        yield inici
-        inici = inici + increment
-#######################################################
 
 #Printem la capçalera
 print "| L | M | X | J | V | S | D |"
