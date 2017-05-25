@@ -12,15 +12,15 @@ def comprobacio_perm (path_to_explore):
         for name in files:
             name_path=os.path.join(root, name)
             print(name_path) ,
-            permissions = oct(stat.S_IMODE ( os.stat (name_path).st_mode ))
-            return permissions
+            permissions1 = oct(stat.S_IMODE ( os.stat (name_path).st_mode ))
+            return permissions1
 
 
         for name in dirs:
             name_path=os.path.join(root, name)
             print(name_path) ,
-            permissions = oct(stat.S_IMODE ( os.stat (name_path).st_mode ))
-            return permissions
+            permissions2 = oct(stat.S_IMODE ( os.stat (name_path).st_mode ))
+            return permissions2
 
 
 ############################################################
